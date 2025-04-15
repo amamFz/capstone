@@ -49,8 +49,8 @@
 ### 1. Clone Repository
 
 ```bash
-git clone https://github.com/username/sehatica.git
-cd sehatica
+git clone https://github.com/amamFz/capstone.git
+cd capstone
 ```
 
 ### 2. Install Dependency (Next.js)
@@ -172,7 +172,7 @@ npm run dev
 
 1. User login/register via Supabase
 2. Isi form gejala penyakit
-3. Data dikirim ke Flask (`/diagnose`)
+3. Data dikirim ke Flask 
 4. Flask kembalikan hasil diagnosis → ditampilkan ke user
 5. Hasil diagnosis disimpan di Supabase → tampil di dashboard user
 
