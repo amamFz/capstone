@@ -38,7 +38,7 @@
 | Frontend  | Next.js (App Router)               |
 | UI        | Tailwind CSS + ShadCN UI           |
 | Auth      | Supabase Auth                      |
-| DB        | Supabase (PostgreSQL) - native SQL |
+| DB        | Supabase (PostgreSQL) |
 | Blog      | Supabase table + storage (gambar)  |
 | Diagnosis | Flask + TensorFlow (Python)        |
 
