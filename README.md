@@ -145,9 +145,9 @@ Buat file `.env.local` di root dan isi:
 ```env
 NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
-
+SUPABASE_JWT_SECRET=
 # Untuk konek ke API diagnosis Flask
-NEXT_PUBLIC_FLASK_API_URL=http://localhost:5000
+DATABASE_URL=
 ```
 
 ### 5. Setup & Jalankan Flask API
