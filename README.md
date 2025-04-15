@@ -190,7 +190,6 @@ npm run dev
 ## 📁 Catatan Tambahan
 
 - Tidak menggunakan ORM (query dilakukan langsung via Supabase SQL API atau client)
-- Data blog dan diagnosis tersimpan di Supabase (bukan file lokal)
 - Gunakan Supabase Row Level Security (RLS) untuk membatasi akses data user
 
 ---
