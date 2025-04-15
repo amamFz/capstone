@@ -43,13 +43,16 @@ export default async function BlogPage({
   }
 
   const { data: posts } = await postsQuery
+  console.log(posts)
+
 
   return (
     <div className="container mx-auto px-4 py-12">
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold mb-4">Blog Kesehatan</h1>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-          Temukan artikel terbaru tentang kesehatan, tips gaya hidup sehat, dan informasi medis dari para ahli.
+          Temukan artikel terbaru tentang kesehatan, tips gaya hidup sehat, dan
+          informasi medis dari para ahli.
         </p>
       </div>
 
@@ -75,7 +78,9 @@ export default async function BlogPage({
             {categories.map((category) => (
               <Link
                 key={category}
-                href={`/blog?category=${category}${searchQuery ? `&search=${searchQuery}` : ""}`}
+                href={`/blog?category=${category}${
+                  searchQuery ? `&search=${searchQuery}` : ""
+                }`}
                 passHref
               >
                 <TabsTrigger value={category} className="px-4">
@@ -92,10 +97,16 @@ export default async function BlogPage({
               {posts && posts.length > 0 ? (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {posts.map((post) => (
-                    <Card key={post.id} className="overflow-hidden flex flex-col h-full">
+                    <Card
+                      key={post.id}
+                      className="overflow-hidden flex flex-col h-full"
+                    >
                       <div className="aspect-video w-full overflow-hidden">
                         <img
-                          src={post.image_url || "/placeholder.svg?height=200&width=400"}
+                          src={
+                            post.image_url ||
+                            "/placeholder.svg?height=200&width=400"
+                          }
                           alt={post.title}
                           className="w-full h-full object-cover transition-transform hover:scale-105"
                         />
@@ -106,18 +117,27 @@ export default async function BlogPage({
                             {post.category}
                           </span>
                           <span className="text-xs text-muted-foreground">
-                            {new Date(post.created_at).toLocaleDateString("id-ID", {
-                              day: "numeric",
-                              month: "long",
-                              year: "numeric",
-                            })}
+                            {new Date(post.created_at).toLocaleDateString(
+                              "id-ID",
+                              {
+                                day: "numeric",
+                                month: "long",
+                                year: "numeric",
+                              }
+                            )}
                           </span>
                         </div>
-                        <CardTitle className="line-clamp-2">{post.title}</CardTitle>
-                        <CardDescription className="line-clamp-2">{post.excerpt}</CardDescription>
+                        <CardTitle className="line-clamp-2">
+                          {post.title}
+                        </CardTitle>
+                        <CardDescription className="line-clamp-2">
+                          {post.excerpt}
+                        </CardDescription>
                       </CardHeader>
                       <CardContent className="flex-grow">
-                        <p className="text-muted-foreground line-clamp-3">{post.excerpt}</p>
+                        <p className="text-muted-foreground line-clamp-3">
+                          {post.excerpt}
+                        </p>
                       </CardContent>
                       <CardFooter>
                         <Link href={`/blog/${post.id}`} className="w-full">
@@ -131,13 +151,15 @@ export default async function BlogPage({
                 </div>
               ) : (
                 <div className="text-center py-12">
-                  <h3 className="text-lg font-medium mb-2">Tidak ada artikel ditemukan</h3>
+                  <h3 className="text-lg font-medium mb-2">
+                    Tidak ada artikel ditemukan
+                  </h3>
                   <p className="text-muted-foreground mb-6">
                     {searchQuery
                       ? `Tidak ada artikel yang cocok dengan pencarian "${searchQuery}"`
                       : selectedCategory === "Semua"
-                        ? "Belum ada artikel yang tersedia saat ini."
-                        : `Belum ada artikel dalam kategori ${selectedCategory}.`}
+                      ? "Belum ada artikel yang tersedia saat ini."
+                      : `Belum ada artikel dalam kategori ${selectedCategory}.`}
                   </p>
                   <Link href="/blog">
                     <Button>Lihat Semua Artikel</Button>
@@ -149,6 +171,6 @@ export default async function BlogPage({
         ))}
       </Tabs>
     </div>
-  )
+  );
 }
 
