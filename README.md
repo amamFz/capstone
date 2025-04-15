@@ -196,5 +196,5 @@ npm run dev
 
 ## ✅ Status
 
-🔄 **Sedang Progress**\
+🔄 **Sedang Progress**
 
